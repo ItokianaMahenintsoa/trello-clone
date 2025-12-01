@@ -36,9 +36,18 @@ define the button styled-component
 
 2. Create AddNewItem Components
 
+3. Create Input Form => scr/NewItemForm.tsx
+
+4. Update AddNewItem to add NewItemForm component
+
+5. Add AddNewItem to App Layout in src/App.tsx => to add New List
+    Add AddNewItem to Column Layout in Column.tsx to add new Task
+
+6. Create a new file scr/utils/useFocus.ts => to get access to the rendered input element
+
+7. Go back to scr/NewItemForm.tsx => use the hooks useFocus
 
 
-7. Define Props in Column Components 
 
 
 

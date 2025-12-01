@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Children } from "react";
 import { ColumnContainer, ColumnTitle } from "./style";
 import { Card } from "./Card";
+import { AddNewItem } from "./AddNewItem";
 
 // In typescript, we need to provide a type or an interface to define the form of props objects
 // interface ColumnProps {
@@ -9,16 +10,15 @@ import { Card } from "./Card";
 
 type ColumnProps = {
     text: string
-    // children?: React.ReactNode;
+    children?: React.ReactNode;
 }
 
-export const Column = ({text} : ColumnProps) => {
+export const Column = ({text, children} : React.PropsWithChildren<ColumnProps>) => {
     return (
         <ColumnContainer>
             <ColumnTitle>{text} </ColumnTitle>
-            <Card text="Generate app scaffold"/>
-            <Card text="Learn Typescript"/>
-            <Card text="Begin to use static typing"/>
+            {children}
+            <AddNewItem toggleButtonText="+Add another task" onAdd={console.log} dark/>
         </ColumnContainer>
     )
 }
