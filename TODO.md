@@ -23,7 +23,20 @@ file with *.d.ts contains typescript types definitions
 5. In style.css, create  ColumnContainer, ColumnTitle, CartContainer
 
 6. Create Column Components : src/Column.tsx
-    Use ColumnContainer an ColumnTitle inside 
+    Use ColumnContainer an ColumnTitle inside
+    Create ColumnProps for Column Components
+
+7. Create Card Components
+
+8. Use Card Components in src/Column.tsx
+
+<!-- COMPONENTS FOR ADDING NEW ITEMS -->
+1. In src/styles.ts, define a new type AddItemButtomProps for add new "Add another cart" button
+define the button styled-component
+
+2. Create AddNewItem Components
+
+
 
 7. Define Props in Column Components 
 

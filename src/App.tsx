@@ -6,7 +6,7 @@ import { Column } from './Column';
 const App = () => {
   return (
     <AppContainer>
-        <Column text="Todo:"/>
+      <Column text="Columns will go here"/>
     </AppContainer>
   )
 }
