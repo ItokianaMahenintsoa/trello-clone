@@ -25,3 +25,7 @@ file with *.d.ts contains typescript types definitions
 6. Create Column Components : src/Column.tsx
     Use ColumnContainer an ColumnTitle inside 
 
+7. Define Props in Column Components 
+
+
+

@@ -25,7 +25,7 @@ export const ColumnTitle = styled.div`
     font-weight: bold;
 `
 
-export const CartContainer = styled.div`
+export const CardContainer = styled.div`
     background-color: #ffffff;
     curson: pointer;
     margin-bottom : 0.5rem;
