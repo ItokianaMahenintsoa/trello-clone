@@ -47,6 +47,31 @@ define the button styled-component
 
 7. Go back to scr/NewItemForm.tsx => use the hooks useFocus
 
+<!-- ADD GLOBAL STATE AND BUSINESS LOGIC -->
+1. Open App.tsx , and add a counter exemple : (I comment all the code of counter exemple)
+
+2. Create a new file : scr/AppStateContext.tsx
+    Define the application data
+    Define the types
+    Define AppStateContext
+    Define AppStateProvider
+
+3. Go to index.tsx
+    Wrap the <App/> into AppStateProvider.
+
+4. Using Data From Global Context => Implement Custom Hook
+    Go back to src AppStateContext.tsx 
+    Import useContext
+    Define a new function => useAppState
+    
+5. Get The Data From AppStateContext
+    Go to src/App.tsx
+    Import the hook 
+    Update the layoout to use the appData *
+    Update Column.tsx props to accept index props
+    Continue Updating Column.tsx to use he hook useAppState
+    
+
 
 
 

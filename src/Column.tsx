@@ -2,6 +2,7 @@ import React, { Children } from "react";
 import { ColumnContainer, ColumnTitle } from "./style";
 import { Card } from "./Card";
 import { AddNewItem } from "./AddNewItem";
+import { useAppState } from "./AppStateContext";
 
 // In typescript, we need to provide a type or an interface to define the form of props objects
 // interface ColumnProps {
@@ -10,14 +11,20 @@ import { AddNewItem } from "./AddNewItem";
 
 type ColumnProps = {
     text: string
-    children?: React.ReactNode;
+    index: number
+    // children?: React.ReactNode;
 }
 
-export const Column = ({text, children} : React.PropsWithChildren<ColumnProps>) => {
+export const Column = ({text,  index} : React.PropsWithChildren<ColumnProps>) => {
+    const {state} = useAppState();
+    
+    
     return (
         <ColumnContainer>
             <ColumnTitle>{text} </ColumnTitle>
-            {children}
+            {state.lists[index].tasks.map(task => (
+                <Card text={task.text} key={task.id}></Card>
+            ))}
             <AddNewItem toggleButtonText="+Add another task" onAdd={console.log} dark/>
         </ColumnContainer>
     )
