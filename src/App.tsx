@@ -1,10 +1,10 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { AppContainer } from "./style";
 import { Column } from "./Column";
 import { Card } from "./Card";
 import { AddNewItem } from "./AddNewItem";
 import { useAppState } from "./AppStateContext";
-
+import { addList } from "./state/actions";
 
 // This is an exemple to useReducer in Typescript
 // interface State {
@@ -47,13 +47,13 @@ import { useAppState } from "./AppStateContext";
 
 
 const App = () => {
-  const {state} = useAppState() // Call the hook
+  const { state, dispatch } = useAppState();
+  const { lists } = state;
 
-  
   return (
     <AppContainer>
-      {state.lists.map((list, i ) => (
-        <Column text={list.text} key={list.id} index={i}/>
+      {lists.map((list) => (
+        <Column text={list.text} key={list.id} id={list.id} />
       ))}
       {/* <Column text="To Do">
         <Card text="Generate app scaffold" />
@@ -64,7 +64,10 @@ const App = () => {
       <Column text="Done">
         <Card text="Begin to use static typing" />
       </Column> */}
-      <AddNewItem toggleButtonText="+Add another list" onAdd={console.log} />
+      <AddNewItem 
+        toggleButtonText="+Add another list" 
+        onAdd={(text) => dispatch(addList(text))} 
+      />
     </AppContainer>
   );
 };

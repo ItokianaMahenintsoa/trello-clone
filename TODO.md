@@ -70,7 +70,39 @@ define the button styled-component
     Update the layoout to use the appData *
     Update Column.tsx props to accept index props
     Continue Updating Column.tsx to use he hook useAppState
+
+<!-- ADDING ITEMS -->
+1. Adding Two Actions: ADD_TASK and ADD_LIST in src/AppStateContext
+    Don't forget the Type
+
+2. Define appStateReducer : scr/state/appStateReducer.ts
+
+3. Update AppStateProvider : src/AppStateContext.tsx
+
+4. Adding List : => we will use nanoid librairies (Nanoid is a Javascript librairy for generate ID)
+    Install nanoid via npm/yarn
+    Import nanoid in scr/state/appStateReducer.ts
+    Update the ADD_LIST block to the reducer 
+
+5. Adding Tasks:
+    Create a new file src/utils/arrayUtils.ts
+    Define a new type Item inside
+    Return to scr/state/appStateReducer.ts
+    Import findIemByIndex
+    Define the ADD_TASK Handler
+
+6. Provide Dispatch Through the context : implement adding lists and tasks on the ui
+    Open src/state/AppStateContext 
+    Add the imports
     
+7. Dispatching Actions:
+    Go to src/App.tsx 
+    Import addList action creator form scr/state/actions.ts
+    Update the App component definition 
+    Open src/Column.tsx 
+    Import the addTask 
+
+
 
 
 

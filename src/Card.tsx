@@ -1,9 +1,10 @@
 import { CardContainer } from "./style"
 
 type CardProps = {
-    text: string
+    text: string,
+    id: string
 }
 
-export const Card = ({text}: CardProps) => {
+export const Card = ({text, id}: CardProps) => {
     return <CardContainer>{text}</CardContainer>
 } 
