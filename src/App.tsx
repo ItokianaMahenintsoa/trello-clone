@@ -47,8 +47,8 @@ import { addList } from "./state/actions";
 
 
 const App = () => {
-  const { state, dispatch } = useAppState();
-  const { lists } = state;
+  const { lists, dispatch } = useAppState();
+
 
   return (
     <AppContainer>

@@ -103,6 +103,59 @@ define the button styled-component
     Import the addTask 
 
 
+    <!-- MOVING ITEMS -->
+1. Define the moveItem helper function 
+    Goal : define a utility function to help moving the items inside the array
+    Open src/utils/arrayUtils.ts 
+    Define removeItemAtIndex function 
+    Define insertItemAtIndex function 
+    Define moveItem function
+
+2. Handling the MOVE_LIST action
+    Open src/state/appStateReducer.ts
+    Import the moveItem function 
+    Open action.ts and add a new action type to the Action union type and the action creator 
+    Add new case block to the appStateReducer
+
+3. Add Drag and Drop :
+    Install : react-dnd library and react-dnd-html5-backend
+    Open src/index.tsx 
+    Add DndProvider to the layout 
+
+4. Define The Type for Dragging
+    Create a new file scr/DragItem.ts
+    Define ColumnDragItem and assigne it to the DragItem type
+
+5. Store the Dragged Item In the State
+    Go to he src/state/appStateReducer.ts
+    import DragItemType 
+    Update AppState type
+    Go to src/state/AppStateContext.tsx and update the appData constat and the draggedItem field with value null
+    Add the draggedItem field to the AppStateContectProps
+    Update AppStateProvider 
+    In the src/state/actions add a new Anction SET_DRAGGED_ITEM to the Action union type
+    Define the action creator and define new case block 
+
+6. Define the useItemDrag Hook
+    Create a new file src/utils/useItemDrag.ts
+
+7. Drag Column
+    import the useRed and useItemDrag hook in Column Component
+    Define the ref constant that will hold the reference to the dragged div element
+    Pass the ref to the ColumnContainer element
+    Use useItemDrag to find out when did the user begin dragging the column
+    Get the draggedItem from the state
+    Problemen => the hover event might be triggered too frequently => we should use throttle function from the throttle-debounce-ts package => Install throttle-debounce-ts
+    Add the imports : useDrop from react-dnd , throttle from throttle-debounce-ts and moveList from action.ts
+    Add the call to useDrop at the begining of the Column Component after useRefCall
+
+
+
+
+
+
+
+
 
 
 
